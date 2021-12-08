@@ -34,6 +34,7 @@ jobs:
             cd ../home/SimCoin-FrontEnd
             git pull
             npm install
+            export NODE_OPTIONS=--max-old-space-size=8192
             ng build
             systemctl restart nginx
             git status

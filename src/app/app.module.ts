@@ -9,12 +9,14 @@ import { MatListModule } from '@angular/material/list';
 import { PriceBannerComponent } from './price-banner/price-banner.component';
 import { MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PriceBannerComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDividerModule,
     MatListModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,12 +10,12 @@ export class PriceServiceService {
   
 
   constructor(private http: HttpClient) { }
-// Needs work!!!
-  // getPriceList(id: number): Observable<Currency[]>{
-  //   return this.http.get('https://localhost:8080/price')
-  //     .pipe(
-  //       map(response => response as Currency[])
-  //     ), () => console.log();
-  // }
+
+  getPriceList(): Observable<Currency[]>{
+    return this.http.get('http://localhost:8080/price')
+      .pipe(
+        map(response => response as Currency[])
+      )
+  }
 
 }

@@ -35,12 +35,6 @@ jobs:
             git pull
             npm install
             export NODE_OPTIONS=--max-old-space-size=8192
-            ng build
-            if [ $? -eq 0 ]; then
-              echo OK
-              systemctl restart nginx
-              git status
-              exit 0
-            else
-              echo FAIL
-              exit 1    
+            ng build || { echo 'FAILED' ; exit 1; }
+            systemctl restart nginx
+            git status    

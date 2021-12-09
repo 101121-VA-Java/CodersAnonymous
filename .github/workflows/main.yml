@@ -26,7 +26,7 @@ jobs:
       - name: testing server ssh connection
         uses: appleboy/ssh-action@master
         with:
-          host: 207.246.92.147
+          host: 108.61.157.149
           username: root
           key: ${{ secrets.SSH_SECRET }}
           port: 22

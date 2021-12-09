@@ -1,0 +1,14 @@
+.content{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: x-large;
+    font-weight: 600;
+    padding-left: 2em;
+}
+
+.amounts{
+    color: darkslategray;
+}
+
+.cryptos{
+    padding-left: 4em;
+}

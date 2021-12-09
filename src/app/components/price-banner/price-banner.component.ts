@@ -1,4 +1,9 @@
+import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Currency } from 'src/app/model/currency';
+import { PriceServiceService } from 'src/app/price-service.service';
+
 
 
 @Component({
@@ -8,17 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PriceBannerComponent implements OnInit {
 
-  prices = {
-    BTC: 10000,
-    ETH: 50,
-    LTC: 25,
-    MONERO: 15,
-    DOGE: 1
+  constructor(private priceService: PriceServiceService) {
+    this.getPrices();
+   }
+
+  currencies?: Currency[]; 
+  
+  getPrices() {
+  this.priceService.getPriceList().subscribe((response: any) => {this.currencies = response;
+  
+  })
   }
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+
+  ngOnInit(): void {}
 
 }

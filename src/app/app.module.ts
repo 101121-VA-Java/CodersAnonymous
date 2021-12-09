@@ -10,12 +10,14 @@ import { PriceBannerComponent } from './components/price-banner/price-banner.com
 import { MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { UserStatsComponent } from './components/user-stats/user-stats.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PriceBannerComponent
+    PriceBannerComponent,
+    UserStatsComponent
   
   ],
   imports: [

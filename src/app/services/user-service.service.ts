@@ -1,20 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Currency } from './model/currency';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PriceServiceService {
+export class UserServiceService {
   
 
   constructor(private http: HttpClient) { }
 
-  getPriceList(): Observable<Currency[]>{
-    return this.http.get('http://localhost:8080/price')
+  getUser(): Observable<User>{
+    return this.http.get('http://localhost:8080/account')
       .pipe(
-        map(response => response as Currency[])
+        map(response => response as User)
       )
   }
 

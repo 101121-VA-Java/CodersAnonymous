@@ -2,7 +2,7 @@ import { _getFocusedElementPierceShadowDom } from '@angular/cdk/platform';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Currency } from 'src/app/model/currency';
-import { PriceServiceService } from 'src/app/price-service.service';
+import { PriceServiceService } from 'src/app/services/price-service.service';
 
 
 

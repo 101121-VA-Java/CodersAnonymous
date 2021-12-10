@@ -1,7 +1,7 @@
 <br>
 <br>
 <br>
-<div class="content" *ngIf="user.username != undefined">
+<div class="content" *ngIf='user'>
     Total Portfolio Value: <span class="amounts">{{user.total | currency}}</span><br><br>
     Cash Holdings (USD): <span class="amounts">{{user.cash | currency}}</span><br><br>
     Crypto Holdings: <br><br>

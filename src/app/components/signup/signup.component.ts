@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
-import { signupService } from 'src/app/service/signup';
-
+import { AddService } from 'src/app/service/add';
 
 @Component({
   selector: 'app-signup',
@@ -10,21 +8,26 @@ import { signupService } from 'src/app/service/signup';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private signupService: signupService) {}
-  
-  profileForm = this.fb.group({
-    userName: new FormControl(''),
-    password: new FormControl(''),
-    email: new FormControl(''),
-   
-  });
-  onSubmit() {
-    this.signupService
-    console.log('form data is ', this.profileForm.value);
-  }
- 
+  constructor(private addService: AddService) { }
 
   ngOnInit(): void {
   }
 
+  message: string = '';
+
+  reg(username: string, password: string, email: string) {
+
+    this.addService.addUser(username, password, email,).subscribe(
+      (response) => {
+        // navigates us back to the main page
+        // this.router.navigate(['']);
+      },
+      err => {
+        this.message = err.console.error();
+        ;
+      }
+    );
+
+  }
 }
+

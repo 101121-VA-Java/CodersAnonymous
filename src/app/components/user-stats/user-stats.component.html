@@ -1,7 +1,8 @@
 <br>
 <br>
 <br>
-<div class="content" *ngIf='user'>
+<div class="content" *ngIf="user && user.id != null; else logInCreate">
+    <br>
     Total Portfolio Value: <span class="amounts">{{user.total | currency}}</span><br><br>
     Cash Holdings (USD): <span class="amounts">{{user.cash | currency}}</span><br><br>
     Crypto Holdings: <br><br>
@@ -16,3 +17,10 @@
         Net Gain (loss): <span class="amounts">{{user.netGain | currency | negativeParens}}</span><br><br>
 
 </div>
+<ng-template #logInCreate>
+    <div class="content">
+        <br>
+        <br>
+        Please log in or create an account to view your stats and trade.
+    </div>
+</ng-template>

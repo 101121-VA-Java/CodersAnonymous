@@ -9,7 +9,7 @@ export interface User {
     btc: number,
     eth: number,
     ltc: number,
-    mxr: number,
-    dog: number,
+    xmr: number,
+    trx: number,
     netGain: number
 }

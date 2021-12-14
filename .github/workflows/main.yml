@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [ develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
       - name: testing server ssh connection
         uses: appleboy/ssh-action@master
         with:
-          host: 207.246.92.147
+          host: 108.61.157.149
           username: root
           key: ${{ secrets.SSH_SECRET }}
           port: 22
@@ -35,6 +35,6 @@ jobs:
             git pull
             npm install
             export NODE_OPTIONS=--max-old-space-size=8192
-            ng build || { echo 'FAILED' ; exit 1; }
+            ng build --prod=true || { echo 'FAILED' ; exit 1; }
             systemctl restart nginx
             git status    

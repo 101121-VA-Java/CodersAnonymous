@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserStatsComponent } from './components/user-stats/user-stats.component';
 import { NegativeParensPipe } from './pipes/negative-parens.pipe';
 import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { SignupComponent } from './components/signup/signup.component';
     PriceBannerComponent,
     UserStatsComponent,
     NegativeParensPipe,
-    SignupComponent
+    SignupComponent,
+    LoginComponent
   
   ],
   imports: [

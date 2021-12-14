@@ -1,7 +1,6 @@
 <br>
 <br>
-<br>
-<div class="content" *ngIf="user && user.id != null; else logInCreate">
+<div class="content" *ngIf="user; else logInCreate">
     <br>
     Total Portfolio Value: <span class="amounts">{{user.total | currency}}</span><br><br>
     Cash Holdings (USD): <span class="amounts">{{user.cash | currency}}</span><br><br>

@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { UserStatsComponent } from './components/user-stats/user-stats.component';
 import { NegativeParensPipe } from './pipes/negative-parens.pipe';
+import { SignupComponent } from './components/signup/signup.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NegativeParensPipe } from './pipes/negative-parens.pipe';
     AppComponent,
     PriceBannerComponent,
     UserStatsComponent,
-    NegativeParensPipe
+    NegativeParensPipe,
+    SignupComponent
   
   ],
   imports: [

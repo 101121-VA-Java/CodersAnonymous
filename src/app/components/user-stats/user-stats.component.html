@@ -1,6 +1,6 @@
 <br>
 <br>
-<div class="content" *ngIf="user; else logInCreate">
+<div class="content" *ngIf="user && user.id > 3; else logInCreate">
     <br>
     Total Portfolio Value: <span class="amounts">{{user.total | currency}}</span><br><br>
     Cash Holdings (USD): <span class="amounts">{{user.cash | currency}}</span><br><br>
@@ -21,5 +21,6 @@
         <br>
         <br>
         Please log in or create an account to view your stats and trade.
+        <app-login></app-login>
     </div>
 </ng-template>

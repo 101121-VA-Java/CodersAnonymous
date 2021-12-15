@@ -12,15 +12,25 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { UserStatsComponent } from './components/user-stats/user-stats.component';
 import { NegativeParensPipe } from './pipes/negative-parens.pipe';
-
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './login/login.component';
+// for currency exchange -- //
+import { CurrencyExchangeComponent } from './components/currency-exchange/currency-exchange.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+// end currency exchange -- //
 
 @NgModule({
   declarations: [
     AppComponent,
     PriceBannerComponent,
     UserStatsComponent,
-    NegativeParensPipe
-  
+    NegativeParensPipe,
+    SignupComponent,
+    LoginComponent,
+    CurrencyExchangeComponent  
   ],
   imports: [
     BrowserModule,
@@ -30,7 +40,11 @@ import { NegativeParensPipe } from './pipes/negative-parens.pipe';
     MatListModule,
     MatCardModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

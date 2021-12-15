@@ -3,7 +3,7 @@ import { NegativeParensPipe } from 'src/app/pipes/negative-parens.pipe';
 import { User } from 'src/app/model/user';
 import { BrowserTestingModule } from '@angular/platform-browser/testing';
 import { TestScheduler } from 'rxjs/testing';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserStatsService } from 'src/app/services/user-stats.service';
 
 @Component({
   selector: 'app-user-stats',
@@ -12,7 +12,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 })
 export class UserStatsComponent implements OnInit {
 
-  constructor(private userService: UserServiceService) {
+  constructor(private userService: UserStatsService) {
     this.getUser();
    }
 

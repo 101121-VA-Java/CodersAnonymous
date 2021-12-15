@@ -31,7 +31,7 @@ export class LoginService {
         sessionStorage.setItem("token", this.token);        
         sessionStorage.setItem("userId",this.token.split(":")[0] );
         sessionStorage.setItem("userRole",this.token.split(":")[1] );
-        
+        window.location.reload();
       }
       )
     );

@@ -11,7 +11,10 @@
         XMR: <span class="amounts">{{user.xmr | currency}}</span><br><br>        
         TRX: <span class="amounts">{{user.trx | currency}}</span><br>
     </div>
-    <hr> Net Gain (loss): <span class="amounts">{{user.netGain | currency | negativeParens}}</span><br>
+
+    <hr> Net Gain (loss): <span class="amounts">{{user.netGain | currency | negativeParens}}</span><br><br>
+    <br><hr><br>
+    <app-currency-exchange></app-currency-exchange><br><br>
 
 </div>
 <ng-template #logInCreate>

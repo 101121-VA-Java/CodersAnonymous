@@ -1,33 +1,41 @@
-<div class="form-container">
+<br><br>
+
+
+
+<br><br>
+<div fxLayout="column" fxLayoutAlign="space-around center" >
     <div class="container align-content-center" id="regForm">
         <form style="padding-top: 2.5em;">
             <div id="bottomBorder" class="form-row">
-                <h1 class="display-4 text-center">Register</h1>
+                <img src="/assets/img/P2Register.png">
             </div>
             <hr>
             <br>
-            <div class="form-row  text-center">
-                <label>Username:</label>
-                <br>
-                <input class="inputstyle" type="text" name="username" #username>
-
-                <br>
-                <label>Password:</label>
-                <br>
-                <input class="inputstyle" type="password" name="password" #password>
-
-                <br>
-                <label>Email:</label>
-                <br>
-                <input class="inputstyle" type="email" name="password" #email>
-
+            <mat-form-field appearance="fill">
+                <mat-label>Username</mat-label>
+                <input matInput name = "username" #username>
+              </mat-form-field>
                 <br>
                 <br>
-                <input class="btn btn-outline-secondary" value="Save" (click)='reg(username.value, password.value, email.value)'>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input matInput name = "password" #password>
+                  </mat-form-field>
+                  <br>
+                  <br>
+                  <br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input matInput name = "email" #email>
+                  </mat-form-field>
+                <br>
+                <br>
+                <br>
+                <button mat-raised-button color="basic"
+            (click)='reg(username.value, password.value, email.value)'
+            >Register</button>
                 <br>
                 <br>
                 <div style="color:red;">{{message}}</div>
-            </div>
-        </form>
-    </div>
-</div>
+ 

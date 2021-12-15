@@ -1,12 +1,10 @@
 <br>
-<br>
-<br>
 <div class="content" *ngIf="user; else logInCreate">
     <br> Total Portfolio Value: <span class="amounts">{{user.total | currency}}</span><br><br> Cash Holdings (USD): <span class="amounts">{{user.cash | currency}}</span><br><br> Crypto Holdings: <br><br>
     <div class="cryptos">
         BTC: <span class="amounts">{{user.btc | currency}}</span><br><br> ETH: <span class="amounts">{{user.eth | currency}}</span><br><br> LTC: <span class="amounts">{{user.ltc | currency}}</span><br><br> XMR: <span class="amounts">{{user.xmr | currency}}</span><br><br>        TRX: <span class="amounts">{{user.trx | currency}}</span><br><br>
-    </div>
-    <hr> Net Gain (loss): <span class="amounts">{{user.netGain | currency | negativeParens}}</span><br><br>
+    
+    <hr> Net Gain (loss): <span class="amounts">{{user.netGain | currency | negativeParens}}</span></div><br>
 
 </div>
 <ng-template #logInCreate>

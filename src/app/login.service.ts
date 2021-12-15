@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, ɵɵsetComponentScope } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Principal } from './model/principal';
@@ -29,9 +29,9 @@ export class LoginService {
         this.currentUser = response.body as Principal;
         this.token = response.headers.get('Authorization') || '';
         sessionStorage.setItem("token", this.token);        
-        sessionStorage.setItem("userId",this.token.split(":")[0] )
-        sessionStorage.setItem("userRole",this.token.split(":")[1] )
-        
+        sessionStorage.setItem("userId",this.token.split(":")[0] );
+        sessionStorage.setItem("userRole",this.token.split(":")[1] );
+        window.location.reload();
       }
       )
     );

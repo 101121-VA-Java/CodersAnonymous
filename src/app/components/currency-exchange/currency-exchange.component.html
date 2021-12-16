@@ -5,6 +5,7 @@
 <br><br>
 <div fxLayout="column" fxLayoutAlign="space-around center" >
  
+  <div  id = "exchangeCoin" >
 <mat-form-field appearance="fill">
     <mat-label>Amount</mat-label>
     <input matInput name = "amount" #amount [(ngModel)]="currentAmount">
@@ -31,14 +32,15 @@
       <mat-option value="usd">USD</mat-option>
     </mat-select>
   </mat-form-field>
-  <button mat-raised-button color="basic"
-  (click)='exchange(amount.value, from.value, to.value)'
-  >Exchange</button>
-  <div> <br>
+
+  <div>   <button id = "exchangeButton" mat-raised-button color="Warn"
+    (click)='exchange(amount.value, from.value, to.value)'
+    >Exchange</button> <br>
     <p>Converting {{"  " +currentAmount + "  "}} {{displayFrom.toUpperCase( )}} 
      To {{" " +displayTo.toUpperCase( )}} </p> 
      <p style = "font-size: 10px"> (Amount will vary depending on current market rate)</p>
     </div>
+  </div>
 </div>
 
 <div>  

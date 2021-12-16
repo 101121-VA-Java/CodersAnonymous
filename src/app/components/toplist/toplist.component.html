@@ -1,6 +1,26 @@
 <div>
     <ul class = "toplist">
-        <li style="display:inline" class="toplist_header">Top Traders: </li>
-        <li style="display:inline" class="toplist_item" *ngFor="let user of toplist">{{user.username}}: <span style="color:darkslategray">{{user.netGain | currency}}</span></li>
+        <li style="display:inline" class="toplist_header">Top Traders: 
+        </li>
+        <li style="display:inline" class="toplist_item"
+         *ngFor="let user of toplist">{{user.username}}:
+          <span style="color:darkslategray">{{user.netGain | currency}}</span>
+          
+        </li>
+
+        
+        <li *ngIf="user" style="color : darkslategray; display:inline ; float: right; padding-left: 1em;" 
+        class="u_btn"><button mat-raised-button color="Primary" 
+        (click)='logout()'       
+        >Log out</button>
+        </li>
+
+        <li *ngIf="user" style="color : darkslategray; display:inline ; float: right" 
+        class="u_btn"> <button mat-raised-button color="Primary"  
+        (click)='userInfo()'      
+        >User Info</button>
+        </li>
+
+        
     </ul>
 </div>

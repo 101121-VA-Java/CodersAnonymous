@@ -12,3 +12,26 @@
 .cryptos{
     padding-left: 4em;
 }
+
+/* table {
+    margin: auto;  
+    
+    padding: 10px;
+}
+
+table th {
+    margin: 0;
+    border: 2px solid darkslategray;
+    padding: 30px;
+}
+ */
+ table {
+    margin: auto;  
+    width: 70%;
+    border-collapse: collapse;
+  }
+ table, td, th {
+    border: 2px solid darkslategray;
+    padding: 10px;
+  }
+  

@@ -25,6 +25,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
 import { ToplistComponent } from './components/toplist/toplist.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     MatSelectModule,
     MatButtonModule,
     FormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

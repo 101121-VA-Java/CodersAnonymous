@@ -4,3 +4,15 @@
   align-items: flex-start;
   
 }
+
+
+.exchangeCoin {
+  height: 20%;
+ }
+
+
+ #exchangeButton {
+  float:right;
+  height: 20%;
+ }
+ 

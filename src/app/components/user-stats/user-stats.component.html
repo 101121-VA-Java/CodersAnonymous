@@ -13,18 +13,17 @@
 </div>
 <ng-template #logInCreate>
     <div class="content">
-        <app-login></app-login>
-        <hr>
-        <h3>
-            Don't have an account?
-            <small class="text-muted">Making one has never been easier!</small>
-          </h3>
-          <p class="lead">
-            Simply create a username and password for a Basic account,
-            or supply your email for a VIP account with a wider portfolio!
-          </p>
-        <app-signup></app-signup>
-        <br>
-        <br> 
+
+        <table>
+            <tr>
+              <th><app-login></app-login></th>
+              <th><app-signup></app-signup></th>
+              
+            </tr>
+        </table>
+        
+
+        
+      
     </div>
 </ng-template>

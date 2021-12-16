@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
@@ -25,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
 import { ToplistComponent } from './components/toplist/toplist.component';
+import { UserInfoComponent } from './components/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +35,10 @@ import { ToplistComponent } from './components/toplist/toplist.component';
     SignupComponent,
     LoginComponent,
     CurrencyExchangeComponent,
+    ToplistComponent,
+    UserInfoComponent  
     LogoutComponent,  
-    ToplistComponent  
+
   ],
   imports: [
     BrowserModule,

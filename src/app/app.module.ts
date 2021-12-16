@@ -21,7 +21,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { LogoutComponent } from './logout/logout.component';
+import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
+import { ToplistComponent } from './components/toplist/toplist.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { LogoutComponent } from './logout/logout.component';
     SignupComponent,
     LoginComponent,
     CurrencyExchangeComponent,
-    LogoutComponent  
+    LogoutComponent,  
+    ToplistComponent  
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { LogoutComponent } from './logout/logout.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,11 +7,11 @@
  
 <mat-form-field appearance="fill">
     <mat-label>Amount</mat-label>
-    <input matInput name = "amount" #amount>
+    <input matInput name = "amount" #amount [(ngModel)]="currentAmount">
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Buy</mat-label>
-    <mat-select #from>
+    <mat-label>Pay With</mat-label>
+    <mat-select #from [(ngModel)]="displayFrom">
       <mat-option value="btc">BTC</mat-option>
       <mat-option value="eth">ETH</mat-option>
       <mat-option value="ltc">LTC</mat-option>
@@ -21,8 +21,8 @@
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
-    <mat-label>Pay With</mat-label>
-    <mat-select #to>
+    <mat-label>Buy</mat-label>
+    <mat-select #to [(ngModel)]="displayTo">
       <mat-option value="btc">BTC</mat-option>
       <mat-option value="eth">ETH</mat-option>
       <mat-option value="ltc">LTC</mat-option>
@@ -34,4 +34,16 @@
   <button mat-raised-button color="basic"
   (click)='exchange(amount.value, from.value, to.value)'
   >Exchange</button>
+  <div> <br>
+    <p>Converting {{"  " +currentAmount + "  "}} {{displayFrom.toUpperCase( )}} 
+     To {{" " +displayTo.toUpperCase( )}} </p> 
+     <p style = "font-size: 10px"> (Amount will vary depending on current market rate)</p>
+    </div>
+</div>
+
+<div>  
+  <div id = "spinner"> 
+  <mat-spinner ></mat-spinner>
+  </div>
+  <canvas #myChart id = "availableCurrencies" ></canvas>
 </div>

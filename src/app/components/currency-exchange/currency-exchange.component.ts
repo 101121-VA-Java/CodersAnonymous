@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
+import Chart from 'chart.js/auto'
+import { User } from 'src/app/model/user';
 import { ExchangeService } from 'src/app/services/exchange.service';
+import { UserStatsService } from 'src/app/services/user-stats.service';
 
 @Component({
   selector: 'app-currency-exchange',
@@ -8,9 +11,12 @@ import { ExchangeService } from 'src/app/services/exchange.service';
 })
 export class CurrencyExchangeComponent implements OnInit {
 
-  constructor( private ExchangeService : ExchangeService) { }
+  constructor( private ExchangeService : ExchangeService,
+    private UserStatsService : UserStatsService
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
+    this.getUser();
   }
 
 
@@ -19,6 +25,7 @@ export class CurrencyExchangeComponent implements OnInit {
     this.ExchangeService.exchange(amount, from, to).subscribe(
       (response) => {
        alert("Success!");
+       window.location.reload();
       },
       err => {
         console.log(err);
@@ -29,4 +36,53 @@ export class CurrencyExchangeComponent implements OnInit {
 
   }
 
+currentAmount: string = "";  
+displayFrom: string = "";  
+displayTo: string = "";
+user?: User; 
+rawAmount?: User; 
+hideLoading = true;
+getUser() {
+  this.UserStatsService.getUser().subscribe((response: any) => {
+    this.user = response;
+    this.ExchangeService.getCoinValues().subscribe((response: any) => {
+      this.rawAmount = response;   
+    this.insertchart();   
+    document.getElementById('spinner')!.hidden = true;
+    })
+  
+  })
+  }
+insertchart() {
+  var xValues = ["BTC: "+ this.rawAmount?.btc.toFixed(3),
+   "ETH: "+ this.rawAmount?.eth.toFixed(3),
+   "LTC: "+ this.rawAmount?.ltc.toFixed(3), 
+    "XMR: "+ this.rawAmount?.xmr.toFixed(3),
+   "TRX: "+ this.rawAmount?.trx.toFixed(3)];
+  var yValues = 
+    [this.user?.btc,
+     this.user?.eth, 
+     this.user?.ltc,
+     this.user?.xmr, 
+     this.user?.trx];
+  var barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797",
+    "#e8c3b9",
+    "#1e7145"
+  ];
+  
+  new Chart("availableCurrencies", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+
+  });
+}
 }

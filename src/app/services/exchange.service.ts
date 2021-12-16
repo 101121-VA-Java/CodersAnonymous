@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { User } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,13 @@ exchange (amount: string, from: string, to : string) {
         },
       })
 
+}
+getCoinValues(): Observable<User>{
+  console.log
+  return this.http.get(`${environment.API_URL}/user/coins/` + sessionStorage.getItem("userId"))
+    .pipe(
+      map(response => response as User)
+    )
 }
 
 }

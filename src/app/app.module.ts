@@ -20,8 +20,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-import { ToplistComponent } from './components/toplist/toplist.component';
+import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
+import { ToplistComponent } from './components/toplist/toplist.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { ToplistComponent } from './components/toplist/toplist.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

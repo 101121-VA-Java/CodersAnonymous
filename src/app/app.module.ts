@@ -36,8 +36,8 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
     LoginComponent,
     CurrencyExchangeComponent,
     ToplistComponent,
-    UserInfoComponent  
-    LogoutComponent,  
+    UserInfoComponent,  
+    LogoutComponent  
 
   ],
   imports: [

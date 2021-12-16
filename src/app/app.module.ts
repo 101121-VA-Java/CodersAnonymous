@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
+import { ToplistComponent } from './components/toplist/toplist.component';
 // end currency exchange -- //
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatButtonModule} from '@angular/material/button';
     NegativeParensPipe,
     SignupComponent,
     LoginComponent,
-    CurrencyExchangeComponent  
+    CurrencyExchangeComponent,
+    ToplistComponent  
   ],
   imports: [
     BrowserModule,

@@ -24,22 +24,6 @@ export class UserStatsComponent implements OnInit {
   })
   }
    
-
-  // user: User = {
-  //   id: 1,
-  //   username: 'userfortest',
-  //   password: 'mytestpass',
-  //   email: 'myemail@test.com',
-  //   total: 75000,
-  //   cash: 30000,
-  //   btc: 25000,
-  //   eth: 10000,
-  //   ltc: 5000,
-  //   mxr: 4000,
-  //   dog: 1000,
-  //   netGain: -420
-  // }
-
   ngOnInit(): void {}
 
 }

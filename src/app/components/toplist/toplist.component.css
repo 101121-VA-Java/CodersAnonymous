@@ -1,0 +1,11 @@
+.toplist_header{
+    font-size: x-large;
+    font-weight: bold;
+    color: firebrick;
+}
+
+.toplist_item{
+    font-size: x-large;
+    font-weight: bold;
+    color:black;
+}

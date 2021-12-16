@@ -1,0 +1,6 @@
+<div>
+    <ul class = "toplist">
+        <li style="display:inline" class="toplist_header">Top Traders: </li>
+        <li style="display:inline" class="toplist_item" *ngFor="let user of toplist">{{user.username}}: <span style="color:darkslategray">{{user.netGain | currency}}</span></li>
+    </ul>
+</div>

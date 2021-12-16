@@ -23,6 +23,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
+import { ToplistComponent } from './components/toplist/toplist.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NegativeParensPipe,
     SignupComponent,
     LoginComponent,
-    CurrencyExchangeComponent  
+    CurrencyExchangeComponent,
+    ToplistComponent  
   ],
   imports: [
     BrowserModule,

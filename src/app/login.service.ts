@@ -12,6 +12,7 @@ export class LoginService {
 
   currentUser?: Principal;
   token: string = '';
+  response: any = '';
 
   constructor(private http: HttpClient) { }
 
@@ -39,8 +40,9 @@ export class LoginService {
   }
 
   logout(): void {
-    this.currentUser = undefined;
+    this.response = undefined;
     this.token = '';
+    sessionStorage.clear();
   }
 
 }

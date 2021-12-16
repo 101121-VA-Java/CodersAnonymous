@@ -4,38 +4,22 @@
 
 <br><br>
 <div fxLayout="column" fxLayoutAlign="space-around center" >
-    <div class="container align-content-center" id="regForm">
-        <form style="padding-top: 2.5em;">
-            <div id="bottomBorder" class="form-row">
-                <img src="/assets/img/P2Register.png">
-            </div>
-            <hr>
-            <br>
-            <mat-form-field appearance="fill">
-                <mat-label>Username</mat-label>
-                <input matInput name = "username" #username>
-              </mat-form-field>
-                <br>
-                <br>
-                <br>
-                <mat-form-field appearance="fill">
-                    <mat-label>Password</mat-label>
-                    <input matInput name = "password" #password>
-                  </mat-form-field>
-                  <br>
-                  <br>
-                  <br>
-                  <mat-form-field appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input matInput name = "email" #email>
-                  </mat-form-field>
-                <br>
-                <br>
-                <br>
-                <button mat-raised-button color="basic"
-            (click)='reg(username.value, password.value, email.value)'
-            >Register</button>
-                <br>
-                <br>
-                <div style="color:red;">{{message}}</div>
+<img src="/assets/img/P2Register.png">
+ 
+<mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input matInput name = "username" #username>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput name = "password" #password>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput name = "email" #email>
+  </mat-form-field>
+  <button mat-raised-button color="basic"
+  (click)='reg(username.value, password.value, email.value)'
+  >Register</button>
+</div>
  

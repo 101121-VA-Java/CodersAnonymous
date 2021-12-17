@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto'
 import { User } from 'src/app/model/user';
 import { ExchangeService } from 'src/app/services/exchange.service';
 import { UserStatsService } from 'src/app/services/user-stats.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-currency-exchange',
@@ -12,7 +13,7 @@ import { UserStatsService } from 'src/app/services/user-stats.service';
 export class CurrencyExchangeComponent implements OnInit {
 
   constructor( private ExchangeService : ExchangeService,
-    private UserStatsService : UserStatsService
+    private UserStatsService : UserStatsService, private router : Router
     ) { }
 
   ngOnInit(): void {   
@@ -25,7 +26,7 @@ export class CurrencyExchangeComponent implements OnInit {
     this.ExchangeService.exchange(amount, from, to).subscribe(
       (response) => {
        alert("Success!");
-       window.location.reload();
+       this.reloadComponent();
       },
       err => {
         console.log(err);
@@ -85,4 +86,12 @@ insertchart() {
 
   });
 }
+
+reloadComponent() {
+  let currentUrl = this.router.url;
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([currentUrl]);
+  }
+
 }

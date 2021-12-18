@@ -1,16 +1,21 @@
-
-            <div fxLayout="column" fxLayoutAlign="space-around center" >
-            <img src="/assets/img/P2Login.png">
-             
-            <mat-form-field appearance="fill">
-                <mat-label>Username</mat-label>
-                <input matInput name = "username" #username>
-              </mat-form-field>
-              <mat-form-field appearance="fill">
-                <mat-label>Password</mat-label>
-                <input type= "password" matInput name = "password" #password>
-              </mat-form-field>
-              <button mat-raised-button color="gray"
-              (click)='login(username.value, password.value)'
-              >Login</button>
-            </div>
+<table>
+  <tr>
+    <th>            <div fxLayout="column" fxLayoutAlign="space-around center" >
+      <img src="/assets/img/P2Login.png">
+       
+      <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput name = "username" #username>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type= "password" matInput name = "password" #password>
+        </mat-form-field>
+        <button mat-raised-button color="gray"
+        (click)='login(username.value, password.value)'
+        >Login</button>
+      </div></th>
+    <th><app-signup></app-signup></th>
+    
+  </tr>
+</table>

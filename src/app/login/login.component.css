@@ -1,0 +1,10 @@
+table {
+    margin: auto;  
+    width: 70%;
+    border-collapse: collapse;
+  }
+ table, td, th {
+    border: 2px solid darkslategray;
+    padding: 10px;
+  }
+  

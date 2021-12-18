@@ -4,6 +4,7 @@ import { ToplistService } from 'src/app/services/toplist.service';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 import {MatDialog} from '@angular/material/dialog';
 import { UserInfoComponent } from '../user-info/user-info.component';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-toplist',
@@ -13,7 +14,7 @@ import { UserInfoComponent } from '../user-info/user-info.component';
 export class ToplistComponent implements OnInit {
 
   constructor(private toplistService: ToplistService, 
-    private userService: UserStatsService, public dialog: MatDialog) {
+    private userService: UserStatsService, public dialog: MatDialog, private router : Router) {
     this.getPrices();
     this.getUser();
    }
@@ -36,7 +37,20 @@ export class ToplistComponent implements OnInit {
 
   logout() {
     sessionStorage.clear();
+    
+    this.router.navigate([''])
+  .then(() => {
     window.location.reload();
+  });
+    
+    
+  }
+
+  reloadTopList() {
+    let currentUrl = this.router.url;
+        this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+        this.router.onSameUrlNavigation = 'reload';
+        this.router.navigate([currentUrl]);
   }
 
   userInfo() {

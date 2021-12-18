@@ -27,6 +27,8 @@ import { ToplistComponent } from './components/toplist/toplist.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +58,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

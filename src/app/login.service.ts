@@ -3,6 +3,7 @@ import { Injectable, ɵɵsetComponentScope } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Principal } from './model/principal';
+import {Router} from "@angular/router"
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class LoginService {
   token: string = '';
   response: any = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private Router: Router) { }
 
   authenticate(username: string, password: string) {
 
@@ -31,11 +32,14 @@ export class LoginService {
         this.token = response.headers.get('Authorization') || '';
         sessionStorage.setItem("token", this.token);        
         sessionStorage.setItem("userId",this.token.split(":")[0] );
-        sessionStorage.setItem("userRole",this.token.split(":")[1] );
-        window.location.reload();
-      }
-      )
-    );
+        sessionStorage.setItem("userRole",this.token.split(":")[1] );        
+        this.Router.navigate(['userstats'])
+        .then(() => {
+          window.location.reload();
+        });
+            }
+            )
+          );
   
   }
 

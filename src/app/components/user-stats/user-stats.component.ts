@@ -5,6 +5,7 @@ import { BrowserTestingModule } from '@angular/platform-browser/testing';
 import { TestScheduler } from 'rxjs/testing';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 
+
 @Component({
   selector: 'app-user-stats',
   templateUrl: './user-stats.component.html',
@@ -13,7 +14,7 @@ import { UserStatsService } from 'src/app/services/user-stats.service';
 export class UserStatsComponent implements OnInit {
 
   constructor(private userService: UserStatsService) {
-    this.getUser();
+    this.getUser();    
    }
 
   user?: User; 

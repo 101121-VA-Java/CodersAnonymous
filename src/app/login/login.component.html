@@ -11,6 +11,7 @@
           <mat-label>Password</mat-label>
           <input type= "password" matInput name = "password" #password>
         </mat-form-field>
+        <app-recaptcha-login></app-recaptcha-login>
         <button mat-raised-button color="gray"
         (click)='login(username.value, password.value)'
         >Login</button>

@@ -27,7 +27,12 @@ import { ToplistComponent } from './components/toplist/toplist.component';
 import { UserInfoComponent } from './components/user-info/user-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
+// For Recaptcha
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
+
 import { AppRoutingModule } from './app-routing.module';
+import { RecaptchaLoginComponent } from './recaptcha-login/recaptcha-login.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,8 @@ import { AppRoutingModule } from './app-routing.module';
     CurrencyExchangeComponent,
     ToplistComponent,
     UserInfoComponent,  
-    LogoutComponent  
+    LogoutComponent,
+    RecaptchaLoginComponent
 
   ],
   imports: [
@@ -59,7 +65,9 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

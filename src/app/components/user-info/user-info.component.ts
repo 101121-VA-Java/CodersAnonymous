@@ -29,8 +29,7 @@ export class UserInfoComponent implements OnInit {
     
     this.addService.update(username, password, email,).subscribe(
       (response) => {
-        // navigates us back to the main page
-        // this.router.navigate(['']);
+        alert("Success! User Updated!");
       },
       err => {
         this.message = err.console.error();

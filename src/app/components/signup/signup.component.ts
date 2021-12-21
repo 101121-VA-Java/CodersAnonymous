@@ -14,17 +14,17 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  message: string = '';
+  // message: string = '';
 
   reg(username: string, password: string, email: string) {
 
-    this.addService.addUser(username, password, email,).subscribe(
+    this.addService.addUser(username, password, email).subscribe(
       (response) => {
-        // navigates us back to the main page
-        // this.router.navigate(['']);
-      },
+        alert("Success! User Created!");
+       },
       err => {
-        this.message = err.console.error();
+        console.log(err);
+        alert("Success! User Created!");
         ;
       }
     );

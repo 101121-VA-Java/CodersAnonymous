@@ -10,7 +10,9 @@ import { LoginService } from '../login.service';
   providedIn: 'root'
 })
 export class AddService {
+
   token: string = '';
+
   update(username: string, password: string, email: string) {
     if(email === ""){
       this.role = "basic"
@@ -18,7 +20,7 @@ export class AddService {
       this.role = "vip"
   }
     
-    let credentials = `username=${username}&password=${password}&email=${email}&role=${this.role}` 
+    let credentials = `userId=${sessionStorage.getItem("userId")}&username=${username}&password=${password}&email=${email}&role=${this.role}` 
 console.log(credentials); 
     
     return this.http.put(`${environment.API_URL}/user`, credentials, {
@@ -26,19 +28,10 @@ console.log(credentials);
       // leverages form params to not expose credentials to the url
         'Content-type': 'application/x-www-form-urlencoded'
       },
-      observe: 'response',
-     
-    }).pipe(
-      map(response => {
-        
-        this.token = response.headers.get('Authorization') || '';
-        sessionStorage.setItem("token", this.token);        
-        sessionStorage.setItem("userId",this.token.split(":")[0] )
    
-    }
-    )
-    );
-  }
+  })
+}
+
 
 
   constructor(private http: HttpClient, private loginService: LoginService ) { }
@@ -64,18 +57,5 @@ console.log(credentials);
    
     }
 
-    message: string = '';
-    login(username: string, password: string) {
-      console.log("test");
-        this.loginService.authenticate(username, password).subscribe(
-          (response) => {
-          
-          },
-          err => {
-            this.message = err.error.error;
-          }
-        );
       
-      }
-    
 }

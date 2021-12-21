@@ -28,6 +28,7 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { AppRoutingModule } from './app-routing.module';
     CurrencyExchangeComponent,
     ToplistComponent,
     UserInfoComponent,  
-    LogoutComponent  
+    LogoutComponent, UpdateUserComponent  
 
   ],
   imports: [

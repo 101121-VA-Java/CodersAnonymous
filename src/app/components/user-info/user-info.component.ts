@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
+import { AddService } from 'src/app/services/add';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserStatsService } from 'src/app/services/user-stats.service';
 })
 export class UserInfoComponent implements OnInit {
   UserArray= [];
-  constructor(private userService: UserStatsService) {
+  constructor(private userService: UserStatsService, private addService: AddService) {
     this.getUser();
    }
 
@@ -23,4 +24,18 @@ export class UserInfoComponent implements OnInit {
    
   ngOnInit(): void {}
 
+  message: string = '';
+  update(username: string, password : string, email : string) {
+    
+    this.addService.update(username, password, email,).subscribe(
+      (response) => {
+        // navigates us back to the main page
+        // this.router.navigate(['']);
+      },
+      err => {
+        this.message = err.console.error();
+        ;
+      }
+    );
+    }
 }

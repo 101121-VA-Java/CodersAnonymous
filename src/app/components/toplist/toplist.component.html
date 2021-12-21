@@ -6,8 +6,7 @@
          *ngFor="let user of toplist">{{user.username}}:
           <span style="color:darkslategray">{{user.netGain | currency}}</span>
           
-        </li>
-
+        </li>        
         
         <li *ngIf="user" style="color : darkslategray; display:inline ; float: right; padding-left: 1em;" 
         class="u_btn"><button mat-raised-button color="Primary" 
@@ -19,6 +18,11 @@
         class="u_btn"> <button mat-raised-button color="Primary"  
         (click)='userInfo()'      
         >User Info</button>
+        </li>
+        <li *ngIf="user" style="color : darkslategray; display:inline ; float: right; padding-left: 1em;" 
+        class="u_btn"><button mat-raised-button color="Primary" 
+        (click)='openChat()'       
+        >Chatroom</button>
         </li>
 
         

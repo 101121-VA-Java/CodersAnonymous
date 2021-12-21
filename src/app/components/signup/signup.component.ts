@@ -20,12 +20,12 @@ export class SignupComponent implements OnInit {
 
     this.addService.addUser(username, password, email).subscribe(
       (response) => {
+        console.log(response);
         alert("Success! User Created!");
        },
       err => {
         console.log(err);
-        alert("Success! User Created!");
-        ;
+        alert("Unsuccessful!");
       }
     );
 

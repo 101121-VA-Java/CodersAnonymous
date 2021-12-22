@@ -59,7 +59,7 @@ export class ToplistComponent implements OnInit {
       const dialogRef = this.dialog.open(UserInfoComponent);
   
       dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
+       
       });
     
   }

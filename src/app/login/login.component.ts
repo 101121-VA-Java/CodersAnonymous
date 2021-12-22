@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 message: string = '';
 
 login(username: string, password: string) {
-console.log("test");
   this.loginService.authenticate(username, password).subscribe(
     (response) => {
     

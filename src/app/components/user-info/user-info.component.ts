@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
 import { AddService } from 'src/app/services/add';
 import { UserStatsService } from 'src/app/services/user-stats.service';
+import {MatDialog} from '@angular/material/dialog';
+import { ErrorMsgComponent } from '../dialogs/error-msg/error-msg.component';
+import { SuccessMsgComponent } from '../dialogs/success-msg/success-msg.component';
 
 @Component({
   selector: 'app-user-info',
@@ -10,7 +13,8 @@ import { UserStatsService } from 'src/app/services/user-stats.service';
 })
 export class UserInfoComponent implements OnInit {
   UserArray= [];
-  constructor(private userService: UserStatsService, private addService: AddService) {
+  constructor(private userService: UserStatsService, private addService: AddService,
+    public dialog: MatDialog) {
     this.getUser();
    }
 
@@ -29,10 +33,10 @@ export class UserInfoComponent implements OnInit {
     
     this.addService.update(username, password, email,).subscribe(
       (response) => {
-        alert("Success! User Updated!");
+        this.dialog.open(SuccessMsgComponent);
       },
       err => {
-        this.message = err.console.error();
+        this.dialog.open(ErrorMsgComponent);
         ;
       }
     );

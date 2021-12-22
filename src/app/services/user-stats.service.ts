@@ -13,7 +13,6 @@ export class UserStatsService {
   constructor(private http: HttpClient) { }
 
   getUser(): Observable<User>{
-    console.log
     return this.http.get(`${environment.API_URL}/user/` + sessionStorage.getItem("userId"))
       .pipe(
         map(response => response as User)

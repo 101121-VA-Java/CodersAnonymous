@@ -28,8 +28,9 @@ import { UserInfoComponent } from './components/user-info/user-info.component';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
-import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { ChatroomComponent } from './components/chatroom/chatroom.component';
+import { ErrorMsgComponent } from './components/dialogs/error-msg/error-msg.component';
+import { SuccessMsgComponent } from './components/dialogs/success-msg/success-msg.component';
 
 
 @NgModule({
@@ -42,10 +43,11 @@ import { ChatroomComponent } from './components/chatroom/chatroom.component';
     LoginComponent,
     CurrencyExchangeComponent,
     ToplistComponent,
-    UserInfoComponent, 
-    UpdateUserComponent,  
+    UserInfoComponent,  
     LogoutComponent,
-    ChatroomComponent  
+    ChatroomComponent,
+    ErrorMsgComponent,
+    SuccessMsgComponent  
 
 
   ],

@@ -27,7 +27,6 @@ exchange (amount: string, from: string, to : string) {
 
 }
 getCoinValues(): Observable<User>{
-  console.log
   return this.http.get(`${environment.API_URL}/user/coins/` + sessionStorage.getItem("userId"))
     .pipe(
       map(response => response as User)

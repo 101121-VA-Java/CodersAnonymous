@@ -21,7 +21,7 @@ export class AddService {
   }
     
     let credentials = `userId=${sessionStorage.getItem("userId")}&username=${username}&password=${password}&email=${email}&role=${this.role}` 
-console.log(credentials); 
+
     
     return this.http.put(`${environment.API_URL}/user`, credentials, {
       headers: {
@@ -45,7 +45,7 @@ role: any
     }
     
     let credentials = `username=${username}&password=${password}&email=${email}&role=${this.role}`
-console.log(credentials); 
+
     
     return this.http.post(`${environment.API_URL}/user`, credentials, {
       headers: {

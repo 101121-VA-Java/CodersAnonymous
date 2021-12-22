@@ -4,6 +4,10 @@ import { User } from 'src/app/model/user';
 import { ExchangeService } from 'src/app/services/exchange.service';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 import {Router} from "@angular/router";
+import {MatDialog} from '@angular/material/dialog';
+import { ErrorMsgComponent } from '../dialogs/error-msg/error-msg.component';
+import { SuccessMsgComponent } from '../dialogs/success-msg/success-msg.component';
+
 
 @Component({
   selector: 'app-currency-exchange',
@@ -13,7 +17,7 @@ import {Router} from "@angular/router";
 export class CurrencyExchangeComponent implements OnInit {
 
   constructor( private ExchangeService : ExchangeService,
-    private UserStatsService : UserStatsService, private router : Router
+    private UserStatsService : UserStatsService, private router : Router, public dialog: MatDialog
     ) { }
 
   ngOnInit(): void {   
@@ -25,15 +29,13 @@ export class CurrencyExchangeComponent implements OnInit {
 
 
   exchange(amount: string, from: string, to : string) {
-    console.log(amount + from + to);
     this.ExchangeService.exchange(amount, from, to).subscribe(
       (response) => {
-       alert("Success!");
+      this.dialog.open(SuccessMsgComponent);
        this.reloadComponent();
       },
       err => {
-        console.log(err);
-        alert("Something went wrong!");
+        this.dialog.open(ErrorMsgComponent);
         ;
       }
     );

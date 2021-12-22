@@ -36,7 +36,7 @@ function connect(chatroomurl) {
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         setConnected(true);
-        console.log('Connected: ' + frame);
+        
         stompClient.subscribe('/message', function (messages) {
             addMessage(messages.body);            
         });
@@ -48,7 +48,7 @@ function disconnect() {
         stompClient.disconnect();
     }
     setConnected(false);
-    console.log("Disconnected");
+    
 }
 
 function sendMessage(username) {

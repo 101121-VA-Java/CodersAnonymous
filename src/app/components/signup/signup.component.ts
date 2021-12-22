@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AddService } from 'src/app/services/add';
+import {MatDialog} from '@angular/material/dialog';
+import { ErrorMsgComponent } from '../dialogs/error-msg/error-msg.component';
+import { SuccessMsgComponent } from '../dialogs/success-msg/success-msg.component';
 
 
 @Component({
@@ -9,7 +12,7 @@ import { AddService } from 'src/app/services/add';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private addService: AddService) { }
+  constructor(private addService: AddService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -19,13 +22,11 @@ export class SignupComponent implements OnInit {
   reg(username: string, password: string, email: string) {
 
     this.addService.addUser(username, password, email).subscribe(
-      (response) => {
-        console.log(response);
-        alert("Success! User Created!");
+      (response) => {        
+        this.dialog.open(SuccessMsgComponent);
        },
-      err => {
-        console.log(err);
-        alert("Unsuccessful!");
+      err => {        
+        this.dialog.open(ErrorMsgComponent);
       }
     );
 

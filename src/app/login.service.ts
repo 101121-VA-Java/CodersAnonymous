@@ -32,7 +32,8 @@ export class LoginService {
         this.token = response.headers.get('Authorization') || '';
         sessionStorage.setItem("token", this.token);        
         sessionStorage.setItem("userId",this.token.split(":")[0] );
-        sessionStorage.setItem("userRole",this.token.split(":")[1] );        
+        sessionStorage.setItem("userRole",this.token.split(":")[1] );     
+        sessionStorage.setItem("username",this.token.split(":")[2] );    
         this.Router.navigate(['userstats'])
         .then(() => {
           window.location.reload();

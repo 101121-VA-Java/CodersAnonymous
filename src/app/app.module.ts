@@ -29,6 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { ChatroomComponent } from './components/chatroom/chatroom.component';
+
 
 @NgModule({
   declarations: [
@@ -40,8 +42,11 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
     LoginComponent,
     CurrencyExchangeComponent,
     ToplistComponent,
-    UserInfoComponent,  
-    LogoutComponent, UpdateUserComponent  
+    UserInfoComponent, 
+    UpdateUserComponent,  
+    LogoutComponent,
+    ChatroomComponent  
+
 
   ],
   imports: [

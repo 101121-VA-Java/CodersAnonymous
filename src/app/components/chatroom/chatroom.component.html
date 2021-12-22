@@ -1,0 +1,41 @@
+<head>
+    <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+        enabled. Please enable
+        Javascript and reload this page!</h2></noscript>
+
+
+    <div id="dialog" title="Chat Room - Lobby">
+        <div id="main-content" class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="connect">WebSocket:</label>
+                            <button id="connect" class="btn btn-default" (click)='connectBtn()' type="submit">Connect</button>
+                            <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    
+            <div id = "usrmsgs" >            
+            </div>   
+      
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">Type your message here</label>
+                    <input type="text" id="name" class="form-control" placeholder="Your text here..." #usrmsg>
+                </div>
+                <button id = "sendMsgBtn" mat-raised-button color="Warn"
+                (click)='sendMsg()'
+                >Send</button>
+            </form>
+        </div>      </div>
+       
+      
+</head>
+
+<button id="opener"  mat-raised-button color="Warn" >Chat Room</button>

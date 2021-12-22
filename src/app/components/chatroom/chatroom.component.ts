@@ -7,6 +7,7 @@ declare function sendMessage(usrname : string): void;
 declare function addMessage(msg : string): void;
 declare function openChatBox(): void;
 
+
 @Component({
   selector: 'app-chatroom',
   templateUrl: './chatroom.component.html',
@@ -26,13 +27,15 @@ export class ChatroomComponent implements OnInit {
   getHistory() {
     this.ChatService.getChatHistory().subscribe((response: any) => {this.chatHistory = response;     
       for (var val of this.chatHistory!) {  
-        addMessage(val); 
+        addMessage(val);         
       }
     })
     }
   
   sendMsg(){
     sendMessage(sessionStorage.getItem('username') || "Guest");
+    (<HTMLInputElement>document.getElementById("name")).value = "";
+
   }
   openChat(){
     openChatBox();

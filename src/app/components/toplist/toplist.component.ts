@@ -4,7 +4,7 @@ import { ToplistService } from 'src/app/services/toplist.service';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 import {MatDialog} from '@angular/material/dialog';
 import { UserInfoComponent } from '../user-info/user-info.component';
-import { ChatroomComponent } from '../chatroom/chatroom.component';
+
 import {Router} from "@angular/router"
 
 @Component({
@@ -64,14 +64,5 @@ export class ToplistComponent implements OnInit {
     
   }
 
-  openChat() {
-    
-    const dialogRef = this.dialog.open(ChatroomComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  
-}
 
 }

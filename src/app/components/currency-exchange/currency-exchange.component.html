@@ -14,22 +14,22 @@
     <mat-label>Pay With</mat-label>
     <mat-select #from [(ngModel)]="displayFrom">
       <mat-option value="btc">BTC</mat-option>
-      <mat-option value="eth">ETH</mat-option>
-      <mat-option value="ltc">LTC</mat-option>
-      <mat-option value="xmr">XMR</mat-option>
-      <mat-option value="trx">TRX</mat-option>
-      <mat-option value="usd">USD</mat-option>
+      <mat-option value="eth" [disabled]=!isVip>ETH</mat-option>
+      <mat-option value="ltc" [disabled]=!isVip>LTC</mat-option>
+      <mat-option value="xmr" [disabled]=!isVip>XMR</mat-option>
+      <mat-option value="trx" [disabled]=!isVip>TRX</mat-option>
+      <mat-option value="usd" [disabled]=!isVip>USD</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Buy</mat-label>
     <mat-select #to [(ngModel)]="displayTo">
       <mat-option value="btc">BTC</mat-option>
-      <mat-option value="eth">ETH</mat-option>
-      <mat-option value="ltc">LTC</mat-option>
-      <mat-option value="xmr">XMR</mat-option>
-      <mat-option value="trx">TRX</mat-option>
-      <mat-option value="usd">USD</mat-option>
+      <mat-option value="eth" [disabled]=!isVip>ETH</mat-option>
+      <mat-option value="ltc" [disabled]=!isVip>LTC</mat-option>
+      <mat-option value="xmr" [disabled]=!isVip>XMR</mat-option>
+      <mat-option value="trx" [disabled]=!isVip>TRX</mat-option>
+      <mat-option value="usd" [disabled]=!isVip>USD</mat-option>
     </mat-select>
   </mat-form-field>
 

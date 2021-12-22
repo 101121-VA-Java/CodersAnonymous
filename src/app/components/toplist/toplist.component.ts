@@ -4,6 +4,7 @@ import { ToplistService } from 'src/app/services/toplist.service';
 import { UserStatsService } from 'src/app/services/user-stats.service';
 import {MatDialog} from '@angular/material/dialog';
 import { UserInfoComponent } from '../user-info/user-info.component';
+
 import {Router} from "@angular/router"
 
 @Component({
@@ -62,5 +63,6 @@ export class ToplistComponent implements OnInit {
       });
     
   }
+
 
 }

@@ -18,6 +18,9 @@ export class CurrencyExchangeComponent implements OnInit {
 
   ngOnInit(): void {   
     this.getUser();
+    if (sessionStorage.getItem('userRole')=='vip'){
+      this.isVip = true;
+    }
   }
 
 
@@ -42,6 +45,7 @@ displayFrom: string = "";
 displayTo: string = "";
 user?: User; 
 rawAmount?: User; 
+isVip : boolean = false;
 hideLoading = true;
 getUser() {
   this.UserStatsService.getUser().subscribe((response: any) => {

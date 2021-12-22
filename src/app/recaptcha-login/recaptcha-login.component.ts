@@ -17,5 +17,6 @@ export class RecaptchaLoginComponent implements OnInit {
     });
   }
 
-  siteKey:string = "6LdKmLgdAAAAADJvAUk94CTHsIUUjUIPnfdp0EGf";
+  siteKey:string = "6LdKmLgdAAAAADJvAUk94CTHsIUUjUIPnfdp0EGf"; 
+
 }

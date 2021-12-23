@@ -16,6 +16,7 @@ declare function dragElement(element: Element): void;
 export class ChatroomComponent implements OnInit {  
   chatHistory? : string[];
   chatIsHidden = true;
+  chatDisplay = "Chat Room";
   constructor(private ChatService: ChatService) { }
 
   ngOnInit(): void {
@@ -42,10 +43,13 @@ export class ChatroomComponent implements OnInit {
     if (this.chatIsHidden == true) {
     document.getElementById('mydiv')!.hidden = false;
     this.chatIsHidden = false;
+    this.chatDisplay = "Hide Chat";
     }
     else {
       document.getElementById('mydiv')!.hidden = true;
       this.chatIsHidden = true;
+      this.chatDisplay = "Show Chat";
+
     }
   }
   connectBtn() {

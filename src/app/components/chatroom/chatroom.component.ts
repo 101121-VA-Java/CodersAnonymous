@@ -5,7 +5,7 @@ import { ChatService } from 'src/app/services/chat.service';
 declare function connect(chatroomurl: string): void;
 declare function sendMessage(usrname : string): void;
 declare function addMessage(msg : string): void;
-declare function openChatBox(): void;
+declare function dragElement(element: Element): void;
 
 
 @Component({
@@ -13,12 +13,13 @@ declare function openChatBox(): void;
   templateUrl: './chatroom.component.html',
   styleUrls: ['./chatroom.component.css']
 })
-export class ChatroomComponent implements OnInit {
-
+export class ChatroomComponent implements OnInit {  
   chatHistory? : string[];
+  chatIsHidden = true;
   constructor(private ChatService: ChatService) { }
 
   ngOnInit(): void {
+    dragElement(document.getElementById("mydiv")!);
     var chatroomurl:string = environment.API_URL + '/chatroom';
     this.getHistory();
     connect(chatroomurl);
@@ -38,7 +39,14 @@ export class ChatroomComponent implements OnInit {
 
   }
   openChat(){
-    openChatBox();
+    if (this.chatIsHidden == true) {
+    document.getElementById('mydiv')!.hidden = false;
+    this.chatIsHidden = false;
+    }
+    else {
+      document.getElementById('mydiv')!.hidden = true;
+      this.chatIsHidden = true;
+    }
   }
   connectBtn() {
     var chatroomurl:string = environment.API_URL + '/chatroom';

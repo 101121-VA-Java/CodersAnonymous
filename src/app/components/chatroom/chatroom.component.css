@@ -1,0 +1,29 @@
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  width: 25%; 
+  border: 1px solid #d3d3d3;
+  max-height:75%;
+  
+
+}
+#usrmsgsBox{
+
+  position: absolute;
+  z-index: 9;
+  background-color: #f1f1f1;
+  width: 100%; 
+  max-height:300%;
+  overflow:auto;
+  
+  
+}
+
+#mydivheader {  
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}

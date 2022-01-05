@@ -12,6 +12,14 @@
           <mat-label>Password</mat-label>
           <input type= "password" matInput name = "password" #password>
         </mat-form-field>
+        <!-- <div>
+          <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" >
+          </ngx-recaptcha2>
+        </div> -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <form id="simpleForm" action="backEndServiceUrl" method="POST">
+          <button class="g-recaptcha" data-sitekey="yourKey" data-callback="onLogin">Login</button>
+        </form>
         <button mat-raised-button color="gray"
         (click)='login(username.value, password.value)'
         >Login</button>

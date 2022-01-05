@@ -12,7 +12,11 @@ import { SuccessMsgComponent } from '../dialogs/success-msg/success-msg.componen
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private addService: AddService, public dialog: MatDialog) { }
+  
+
+  constructor(private addService: AddService, public dialog: MatDialog) {
+    
+   }
 
   ngOnInit(): void {
   }
@@ -31,4 +35,6 @@ export class SignupComponent implements OnInit {
     );
 
   }
+
+ 
 }

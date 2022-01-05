@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { LogoutComponent } from './logout/logout.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 // end currency exchange -- //
 import { ToplistComponent } from './components/toplist/toplist.component';
@@ -31,6 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ChatroomComponent } from './components/chatroom/chatroom.component';
 import { ErrorMsgComponent } from './components/dialogs/error-msg/error-msg.component';
 import { SuccessMsgComponent } from './components/dialogs/success-msg/success-msg.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -67,7 +68,9 @@ import { SuccessMsgComponent } from './components/dialogs/success-msg/success-ms
     FormsModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
